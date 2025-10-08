@@ -3,6 +3,7 @@
 
 use dropshot::endpoint;
 use dropshot::ApiDescription;
+use dropshot::ConfigDropshot;
 use dropshot::ConfigLogging;
 use dropshot::ConfigLoggingLevel;
 use dropshot::HttpError;
@@ -19,6 +20,10 @@ use std::sync::atomic::Ordering;
 
 #[tokio::main]
 async fn main() -> Result<(), String> {
+    let config_dropshot = ConfigDropshot {
+        bind_address: "127.0.0.1:12345".parse().unwrap(),
+        ..Default::default()
+    };
     // For simplicity, we'll configure an "info"-level logger that writes to
     // stderr assuming that it's a terminal.
     let config_logging =
@@ -42,6 +47,7 @@ async fn main() -> Result<(), String> {
     // uses port 0, which allows the operating system to pick any available
     // port.
     let server = ServerBuilder::new(api, api_context, log)
+        .config(config_dropshot)
         .start()
         .map_err(|error| format!("failed to create server: {}", error))?;
 
