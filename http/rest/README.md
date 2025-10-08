@@ -1,4 +1,4 @@
 # rest
 
-A [dropshot](https://github.com/oxidecomputer/dropshot/) PUT/GET counter rest example.
+A PUT/GET counter rest example using [dropshot](https://github.com/oxidecomputer/dropshot/).
 

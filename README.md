@@ -4,4 +4,4 @@ Here are my Rust experiments, mostly homelab stuff.
 
 ## http
 
-- [http/rest](http/rest): a [dropshot](https://github.com/oxidecomputer/dropshot/) PUT/GET counter rest example.
+- [rest](http/rest): a PUT/GET counter rest example using [dropshot](https://github.com/oxidecomputer/dropshot/).
