@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-dropshot = "0.16.4"
+dropshot = "0.16.6"
 schemars = "0.8.22"
 serde = "1.0.228"
 tokio = "1.47.1"
